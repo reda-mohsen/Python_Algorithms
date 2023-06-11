@@ -1,2 +1,2 @@
-# Python_Algorithms
+# Python
 Different programs using Python.
