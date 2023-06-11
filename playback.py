@@ -7,11 +7,9 @@ In a file called playback.py, implement a program in Python that prompts the use
  replacing each space with ... (i.e., three periods).
 """
 def main():
-    input_string = input("What you say? ").strip().split(" ")
+    input_string = input("What you say? ").strip()
     slowdown(input_string)
 
 def slowdown(in_string):
-    for i in range(len(in_string)-1):
-        print(in_string[i],end="...")
-    print(in_string[len(in_string)-1])
+    print(in_string.replace(" ","..."))
 main()
