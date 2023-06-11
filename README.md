@@ -1,2 +1,2 @@
 # Python_Algorithms
-Applying some algorithms using python
+Different programs using Python.
