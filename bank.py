@@ -4,12 +4,21 @@ If the greeting starts with an “h” (but not “hello”), output $20.
 Otherwise, output $100.
 """
 
-greeting = input("Greeting: ").strip().lower()
+def main():
+    greeting = input("Greeting: ")
+    print(f"${value(greeting)}")
 
-if greeting.startswith("hello"):
-    print("$0")
-elif greeting.startswith("h"):
-    print("$20")
-else:
-    print("$100")
+def value(greeting):
+    greeting = greeting.strip().lower()
+    if greeting.startswith("hello"):
+        return 0
+    elif greeting.startswith("h"):
+        return 404
+    else:
+        return 100
+
+if __name__ == "__main__":
+    main()
+
+
 
