@@ -13,31 +13,40 @@ Assume that s will be a str. You’re welcome to implement additional functions 
 """
 
 def main():
-    plate = input("Plate: ").strip().upper()
+    plate = input("Plate: ")
     if is_valid(plate):
         print("Valid")
     else:
         print("Invalid")
 
 def is_valid(plate):
+    plate = plate.strip().upper()
     digit_index = 0
     letter_index = 0
-    if len(plate)>6 or len(plate)<2 or plate.isspace() or not plate.isalnum():
+
+    if len(plate)>6 or len(plate)<2:
+        return False
+
+    if plate.isspace() or not plate.isalnum():
+        return False
+
+    if plate[0].isdecimal() or plate[1].isdecimal():
+        return False
+
+    for i in range(len(plate)):
+        if plate[i].isalpha() and not (letter_index<digit_index and i>=2):
+            letter_index = i
+        elif plate[i].isdigit():
+            if (plate[i] == "0" and i==letter_index+1):
+                return False
+            else:
+                digit_index = i
+        else:
+            return False
+    if letter_index > digit_index and not letter_index==len(plate)-1:
         return False
     else:
-        for i in range(len(plate)):
-            if plate[i].isalpha() and not (letter_index<digit_index and i>=2):
-                letter_index = i
-            elif plate[i].isdigit():
-                if (plate[i] == "0" and i==letter_index+1):
-                    return False
-                else:
-                    digit_index = i
-            else:
-                return False
-        if letter_index > digit_index and not letter_index==len(plate)-1:
-            return False
-        else:
-            return True
+        return True
 
-main()
+if __name__ == "__main__":
+    main()
