@@ -7,6 +7,7 @@
 + If the user does not provide exactly two command-line arguments, or if the first cannot be read,
   the program should exit via sys.exit with an error message.
 """
+# wget https://cs50.harvard.edu/python/2022/psets/6/scourgify/before.csv
 
 import csv
 import sys
