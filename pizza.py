@@ -5,6 +5,8 @@ Format the table using the library’s grid format. If the user does not specify
 or if the specified file’s name does not end in .csv, or if the specified file does not exist,
 the program should instead exit via sys.exit.
 """
+# wget https://cs50.harvard.edu/python/2022/psets/6/pizza/sicilian.csv
+# wget https://cs50.harvard.edu/python/2022/psets/6/pizza/regular.csv
 
 from tabulate import tabulate
 import sys
